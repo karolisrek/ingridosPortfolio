@@ -37,15 +37,19 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   
-
+  <div id="burger_menu_btn" class="open" onclick='ChangeMenuState()'>
+    <img class="close-menu-btn" src="images/close_menu.svg">
+    <img class="open-menu-btn" src="images/open_menu.svg">
+  </div>
   <div class="container">
-    <div id="header">
+    <div id="header" class="menu">
       <a href="#Apie">Apie mane</a>
       <a href="#Issilavinimas">Išsilavinimas</a>
       <a href="#Darbo_patirtis">Darbo patirtis</a>
       <a href="#Kursai_seminarai">Kursai, seminarai</a>
       <a href="#Kita_info">Kita informacija</a>
     </div>
+    
     
     <div id="content">
       <a class="anchor" name="Apie"> </a>
@@ -102,7 +106,7 @@
  
       <a class="anchor" name="Issilavinimas"> </a>
       <div class="row">
-        <div class="one-half column">&nbsp;</div>
+        <div class="one-half column dummy">&nbsp;</div>
         <div class="one-half column">
           <h4>Išsilavinimas</h4>
           <p>vieta, darbo pobūdis, darbo sritis, pasiekima</p>
@@ -121,7 +125,7 @@
   
       <a class="anchor" name="Kita_info"> </a>
       <div class="row">
-        <div class="one-half column">&nbsp;</div>
+        <div class="one-half column dummy">&nbsp;</div>
         <div class="one-half column">
           <h4>Kursai, seminarai</h4>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, ea.</p>
