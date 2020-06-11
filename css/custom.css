@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body, p, span {
+    color: #444;
+}
+
 html {
     height: 100%;
     scroll-behavior: smooth;
@@ -37,14 +41,15 @@ body {
     float: left;
     text-align: center;
     line-height: 70px;
-    color: black;
+    color: #444;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 14px;
+    font-weight: 600;
     background-color: #a0c1b8;
     border: solid #709fb0;
     border-width: 1px 1px 1px 0px;
-    transition: 400ms;
+    transition: translate 400ms;
 }
 
 #header a:hover {
@@ -119,6 +124,20 @@ div.foto > img {
 
 .kalba {
     display: block;
+    position: relative;
+    padding-left: 12px;
+}
+
+.kalba::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: #444;
+    display: block;
+    position: absolute;
+    top: 0.5em;
+    left: 2px;
+    border-radius: 50%;
 }
 
 .kalba .stars-block {
@@ -129,6 +148,7 @@ div.foto > img {
 .kalba > p{
     display: inline-block;
     width: calc(100% - 140px);
+    margin-bottom: 10px;
 }
 
 .kalba > p > span{
@@ -137,12 +157,29 @@ div.foto > img {
 }
 
 .star-svg {
-    width: 20px;
+    width: 17px;
     position: relative;
 }
 
 #burger_menu_btn {
     display: none;
+}
+
+#apie h5 {
+    position: relative;
+    display: block;
+    margin-top: 40px;
+}
+
+#apie h5::after {
+    content: '';
+    width: 80%;
+    height: 2px;
+    background-color: #c8c5d3;
+    display: block;
+    position: absolute;
+    top: -15px;
+    right: 10%;
 }
 
 @media only screen and (max-width: 900px) {
@@ -153,6 +190,7 @@ div.foto > img {
     #apie {
         width: 100%;
     }
+
 
     #content .column.foto {
         padding-right: 0;
@@ -184,6 +222,13 @@ div.foto > img {
 
     #content .column {
         margin-bottom: 30px;
+    }
+
+
+    #footer > div .column{
+        border: solid #709fb0;
+        border-width: 0 0 3px 0;
+        margin-top: 20px;
     }
 }
 
@@ -246,12 +291,6 @@ div.foto > img {
 
     #content .column {
         padding: 15px;
-    }
-
-    #footer > div .column{
-        border: solid #709fb0;
-        border-width: 0 0 3px 0;
-        margin-top: 20px;
     }
 
     #footer > div .column:first-of-type {
