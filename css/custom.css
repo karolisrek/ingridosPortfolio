@@ -31,7 +31,6 @@ body {
     z-index: 100;
 }
 
-
 #header a {
     width: 100%;
     display: block;
@@ -72,12 +71,9 @@ body {
 #footer {
     background-color: #94c7d8;
     height: 100px; 
-    margin-bottom: -150px; 
-    width:100%;
-    position: absolute;
-    left: 0;
-    bottom: 0; 
+    position: relative;
     padding: 25px 0;
+    height: 100%;
 }
 
 #footer > div .column{
@@ -116,16 +112,18 @@ div.foto > img {
     border-radius: 30px;
 }
 
-#kalbos {
-    display: flex;
+.kalba {
+    display: block;
 }
 
-#kalbos .stars-block {
-    margin-left: 20px;
+.kalba .stars-block {
+    float: right;
+    min-width: 120px;
 }
 
-#kalbos .stars-block div {
-    margin-bottom: 7px;
+.kalba > p{
+    display: inline-block;
+    width: calc(100% - 140px);
 }
 
 .star-svg {
@@ -133,64 +131,17 @@ div.foto > img {
     position: relative;
 }
 
-@media only screen and (max-width: 600px) {
-    #header {
-        flex-direction: column;
-        transform: translateY(-500px);
-        transition: all .5s ease-in-out; 
+#burger_menu_btn {
+    display: none;
+}
+
+@media only screen and (max-width: 900px) {
+    #header a {
+        font-size: 12px;
     }
 
-    #header.open {
-        flex-direction: column;
-        transform: translateY(0);
-    }
-
-    #burger_menu_btn {
-        display: block;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 50px;
-        height: 50px;
-        background-color: #2a4ca5;
-        z-index: 101;
-    }
-
-    #burger_menu_btn img {
-        display:block;
-        margin:auto;
-        position: absolute;
-        top: 13px;
-        left: 13px;
-        transition: all .2s ease-in-out; 
-    }
-
-    #burger_menu_btn.open .close-menu-btn {
-        transform: scale(0) rotate(360deg);
-    }
-
-    #burger_menu_btn.close .open-menu-btn {
-        transform: scale(0) rotate(360deg);
-    }
-
-    #content {
-        padding-top: 10px;
-    }
-
-    #content .dummy {
-        display: none;
-    }
-
-    #content .row {
-        margin-top: 20px;
-    }
-
-    #content .row:first-of-type {
-        margin-top: 0;
-    }
-
-    #content .column {
-        padding: 15px;
+    #apie {
+        width: 100%;
     }
 
     #content .column.foto {
@@ -207,5 +158,101 @@ div.foto > img {
         left: 0;
         right: 0;
         bottom: 0;
+    }
+
+    .one-half.column {
+        width: 100%;
+    }
+
+    #content .dummy {
+        display: none;
+    }
+
+    .column {
+        margin-left: 0;
+    }
+
+}
+
+@media only screen and (max-width: 700px) {
+    #header {
+        flex-direction: column;
+        transform: translateY(-500px);
+        transition: all .5s ease-in-out; 
+    }
+
+    #header.open {
+        flex-direction: column;
+        transform: translateY(0);
+    }
+
+    #burger_menu_btn {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        background-color: #2a4ca5;
+        z-index: 101;
+        border-radius: 0 0 0 15px ;
+    }
+
+    #burger_menu_btn img {
+        display:block;
+        margin:auto;
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        transition: all .2s ease-in-out; 
+    }
+
+    #burger_menu_btn.open .close-menu-btn {
+        transform: scale(0) rotate(360deg);
+    }
+
+    #burger_menu_btn.close .open-menu-btn {
+        transform: scale(0) rotate(360deg);
+    }
+
+    #content {
+        padding-top: 10px;
+    }
+
+    #content .row {
+        margin-top: 20px;
+    }
+
+    #content .row:first-of-type {
+        margin-top: 0;
+    }
+
+    #content .column {
+        padding: 15px;
+    }
+
+    #footer > div .column{
+        border: solid #2a4ca5;
+        border-width: 0 0 1px 0;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .star-svg {
+        width: 15px;
+        position: relative;
+    }
+    
+    div.foto > img {
+        max-width: 250px;
+    }
+
+    .kalba .stars-block {
+        float: right;
+        min-width: 95px;
+    }
+
+    .kalba > p {
+        width: calc(100% - 100px);
     }
 }
