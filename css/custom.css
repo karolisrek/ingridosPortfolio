@@ -11,10 +11,10 @@ html {
 body {
     font-family: 'Exo', sans-serif;
     position: relative;
-    background-color: #d7e9ee;
+    background-color: #ebeaf1;
 }
 #content {
-    background-color: #fff;
+    background-color: #c8c5d3;
     padding: 0 30px;
 }
 
@@ -41,14 +41,15 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 14px;
-    background-color: #94c7d8;
-    border: solid #2a4ca5;
+    background-color: #a0c1b8;
+    border: solid #709fb0;
     border-width: 1px 1px 1px 0px;
     transition: 400ms;
 }
 
 #header a:hover {
-    background-color: #079ed1;
+    background-color: #709fb0;
+    border: solid #726a95 1px;
 }
 
 #header a:first-of-type {
@@ -62,6 +63,7 @@ body {
 
 #content {
     padding-top: 100px;
+    padding-bottom: 30px;
 }
 
 #burger_menu {
@@ -69,7 +71,7 @@ body {
 }
 
 #footer {
-    background-color: #94c7d8;
+    background-color: #a0c1b8;
     height: 100px; 
     position: relative;
     padding: 25px 0;
@@ -77,12 +79,11 @@ body {
 }
 
 #footer > div .column{
-    border: solid #2a4ca5;
+    border: solid #709fb0;
     border-width: 0 3px 0 0;
 }
 
 #footer > div .column:last-of-type {
-    border: solid #2a4ca5;
     border-width: 0 ;
 }
 
@@ -95,14 +96,18 @@ a.anchor {
 
 #content .column {
     padding: 20px;
-    background-color: #f9fafa;
+    background-color: #dfdde9;
     border-radius: 30px;
+}
+
+#content .column.dummy {
+    visibility: hidden;
 }
 
 #content .column.foto {
     padding: 0;
     padding-right: 20px;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0);
     border-radius: 30px;
 }
 
@@ -124,6 +129,11 @@ div.foto > img {
 .kalba > p{
     display: inline-block;
     width: calc(100% - 140px);
+}
+
+.kalba > p > span{
+    font-size: 12px;
+    font-style: italic;
 }
 
 .star-svg {
@@ -172,6 +182,9 @@ div.foto > img {
         margin-left: 0;
     }
 
+    #content .column {
+        margin-bottom: 30px;
+    }
 }
 
 @media only screen and (max-width: 700px) {
@@ -179,6 +192,10 @@ div.foto > img {
         flex-direction: column;
         transform: translateY(-500px);
         transition: all .5s ease-in-out; 
+    }
+
+    #header a {
+        font-size: 14px;
     }
 
     #header.open {
@@ -193,7 +210,7 @@ div.foto > img {
         right: 0;
         width: 40px;
         height: 40px;
-        background-color: #2a4ca5;
+        background-color: #709fb0;
         z-index: 101;
         border-radius: 0 0 0 15px ;
     }
@@ -232,8 +249,13 @@ div.foto > img {
     }
 
     #footer > div .column{
-        border: solid #2a4ca5;
-        border-width: 0 0 1px 0;
+        border: solid #709fb0;
+        border-width: 0 0 3px 0;
+        margin-top: 20px;
+    }
+
+    #footer > div .column:first-of-type {
+        margin-top: 0;
     }
 }
 
