@@ -20,6 +20,12 @@ body {
 #content {
     background-color: #c8c5d3;
     padding: 0 30px;
+
+    background:
+    radial-gradient(circle at 0% 50%, rgba(0, 0, 0, 0) 9px, #ebeaf1 10px, rgba(0, 0, 0, 0) 11px) 0px 10px,
+    radial-gradient(at 100% 100%,      rgba(0, 0, 0, 0) 9px, #ebeaf1 10px, rgba(0, 0, 0, 0) 11px),
+    #c8c5d3;
+    background-size: 20px 20px;
 }
 
 #header {
@@ -41,24 +47,25 @@ body {
     float: left;
     text-align: center;
     line-height: 70px;
-    color: #444;
+    color: white;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 600;
-    background-color: #a0c1b8;
+    background-color: #666;
     border: solid #709fb0;
     border-width: 1px 1px 1px 0px;
     transition: translate 400ms;
 }
 
 #header a:hover {
+    transition: background-color 400ms, color 200ms;
+    color: white;
     background-color: #709fb0;
-    border: solid #726a95 1px;
 }
 
 #header a:first-of-type {
-    border-width: 1px ;
+    border-width: 1px 1px 1px 0px;
 }
 
 #holder {
@@ -76,11 +83,15 @@ body {
 }
 
 #footer {
-    background-color: #a0c1b8;
+    background-color: #666;
     height: 100px; 
     position: relative;
     padding: 25px 0;
     height: 100%;
+}
+
+#footer, #footer * {
+    color: white;
 }
 
 #footer > div .column{
@@ -101,9 +112,34 @@ a.anchor {
 
 #content .column {
     padding: 20px;
-    background-color: #dfdde9;
+    background-color: #fff;
     border-radius: 30px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
 }
+
+#content .column:hover::after {
+    transform: scale(1.008);
+}
+
+#content .column::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: transform 0.3s ease-in-out;
+}
+#content .column.foto::after {
+    display: none;
+}
+
 
 #content .column.dummy {
     visibility: hidden;
@@ -111,7 +147,6 @@ a.anchor {
 
 #content .column.foto {
     padding: 0;
-    padding-right: 20px;
     background-color: rgba(0, 0, 0, 0);
     border-radius: 30px;
 }
@@ -209,7 +244,7 @@ div.foto > img {
     #content .column.foto {
         padding-right: 0;
         position: relative;
-        height: 260px;
+        height: 390px;
     }
 
     div.foto > img {
@@ -256,6 +291,7 @@ div.foto > img {
 
     #header a {
         font-size: 14px;
+        border-width: 0 0 1px 0;
     }
 
     #header.open {
@@ -311,16 +347,25 @@ div.foto > img {
     #footer > div .column:first-of-type {
         margin-top: 0;
     }
-}
 
-@media only screen and (max-width: 700px) {
+    #content .column.foto {
+        padding-right: 0;
+        position: relative;
+        height: 230px;
+        margin-bottom: 10px;
+    }
+
     .star-svg {
         width: 15px;
         position: relative;
     }
     
+    #content .column.foto {
+        height: 290px;
+    }
+
     div.foto > img {
-        max-width: 250px;
+        max-width: 300px;
     }
 
     .kalba .stars-block {
@@ -330,5 +375,16 @@ div.foto > img {
 
     .kalba > p {
         width: calc(100% - 100px);
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    #content .column.foto {
+        height: calc(100vw - 100px);
+        /* width: auto; */
+    }
+
+    div.foto > img {
+        max-width: 100%;
     }
 }
